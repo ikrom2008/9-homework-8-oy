@@ -1,0 +1,92 @@
+.hero{
+    padding-top: 5px;
+    width: 90%;
+    padding-bottom: 20px;
+}
+.expbtns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.expbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    button{
+    border: none;
+    border-radius: 7px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+}
+.Slider{
+    width: calc(100% - 10px);
+    margin: auto;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+}
+.prev,
+.next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  /* top: 50%; */
+  margin-left: 10%;
+  margin-right: 10%;
+  left: 0;
+  background-color: gray;
+  border-radius: 50%;
+  border: none;
+  /* z-index: 1000; */
+  background-color: black;
+  color: white;
+}
+.controls{
+    position: absolute;
+    width: 100%;
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    top: 270px;
+    align-items: center;
+}
+  .slide {
+    width: 100%;
+    display: none;
+    animation: fade 1s ease-out;
+  }
+  .slide img {
+    border-radius: 10px;
+    width: 100%;
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateX(20%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
