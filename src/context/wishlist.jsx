@@ -1,15 +1,17 @@
-import { create } from 'zustand'; // Updated import statement
+import { create } from 'zustand';
 
 export const useStore = create((set) => ({
-  bears: JSON.parse(localStorage.getItem("wishlist")) || [],
+  // bears: JSON.parse(localStorage.getItem("wishlist")) || [],
+  value: JSON.parse(localStorage.getItem("wishlist")) || [],
   togwish: (payload) =>
     set((state) => {
-      let index = state.bears?.findIndex((el) => el.id === payload.id);
+      let index = state.value?.findIndex((el) => el.id === payload.id);
       if (index < 0) {
-        set({ bears: [...state.bears, payload] });
+        set({ value: [...state.value, payload] });
       } else {
-        set({ bears: state.bears?.filter((el) => el.id !== payload.id) });
+        set({ value: state.value?.filter((el) => el.id !== payload.id) });
       }
-      localStorage.setItem('wishlist', JSON.stringify(state.bears));
+      localStorage.setItem('wishlist', JSON.stringify(state.value));
+      console.log(state.value);
     }),
 }));

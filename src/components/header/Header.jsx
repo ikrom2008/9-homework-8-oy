@@ -2,6 +2,7 @@ import { FaBoxOpen, FaHeart, FaShoppingCart } from 'react-icons/fa'
 import './Header.css'
 import { GrCatalog } from 'react-icons/gr'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 function Header({product}) {
   const [search,setSearch] = useState('')
   const [searchent,setSearchent] = useState(true)
@@ -14,11 +15,12 @@ function Header({product}) {
       <p>{item.title}</p>
     </li>
   ))
+  let navigate = useNavigate()
   return (
     <><br />
       <header className='header'>
         <nav className='navbar'>
-          <h2>AliExpress</h2>
+          <h2 onClick={() => navigate('/')} style={{cursor: 'pointer'}}>AliExpress</h2>
           <div className='expresshead'>
             <button><GrCatalog  size={20} />Catalog</button>
             <div className='expressinp'>
@@ -39,7 +41,7 @@ function Header({product}) {
             </div>
             <button><FaBoxOpen size={20} /> Products</button>
             <button><FaShoppingCart size={20}/> Cart</button>
-            <button><FaHeart size={20}/> Wishlist</button>
+            <button onClick={() => navigate('/wishlist')}><FaHeart size={20}/> Wishlist</button>
           </div>
         </nav>
       </header>

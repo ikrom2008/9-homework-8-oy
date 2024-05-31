@@ -2,6 +2,7 @@
     padding-top: 5px;
     width: 90%;
     padding-bottom: 20px;
+    user-select: none;
 }
 .expbtns{
     width: 100%;
